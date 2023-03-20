@@ -11,6 +11,9 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-columns: 15vw 70vw 15vw;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px 500px 100px;
+
 }
 header, nav, article, footer {
     font-size: 2rem;
@@ -19,26 +22,35 @@ header, nav, article, footer {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 header {
     background-color: aqua;
-    grid-column: 1 span;
+    grid-column-start: 1;
+    grid-column-end: 13;
 
 }
 
 nav {
     background-color: darkorchid;
+    grid-column-start: -2;
+    grid-column-end: -2;
 
 }
 
 article {
     background-color: darkblue;
-    grid-column: 2 span;
+grid-column: 2 span;
+grid-column-start: 1;
+grid-column-end: 10;
+
 }
 
 footer {
     background-color: gray;
     grid-column: span 3;
+    grid-column-start: 1;
+    grid-column-end: 13;
 }
 

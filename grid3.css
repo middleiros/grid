@@ -9,8 +9,14 @@ main {
     background-color: orchid;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-columns: 15vw 70vw 15vw;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 15vw 70vw 15vw;
+   grid-template-areas: 
+   "m h h"
+   "m c c"
+   "m f f";
+   grid-gap: 5px 10px;
+
 }
 header, nav, article, footer {
     font-size: 2rem;
@@ -19,26 +25,31 @@ header, nav, article, footer {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 header {
     background-color: aqua;
-    grid-column: 1 span;
+ grid-area: h;
 
 }
 
 nav {
     background-color: darkorchid;
+   grid-area: m;
 
 }
 
 article {
     background-color: darkblue;
-    grid-column: 2 span;
+grid-area: c;
+
 }
 
 footer {
     background-color: gray;
     grid-column: span 3;
+    grid-column-start: 1;
+    grid-column-end: 13;
 }
 
